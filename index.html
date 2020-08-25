@@ -180,7 +180,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -213,6 +213,86 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/25/20200823_VirtualBox/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="dadnotorc">
+      <meta itemprop="description" content="我的wiki小站">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underwiki">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/25/20200823_VirtualBox/" class="post-title-link" itemprop="url">VirtualBox虚拟机无法识别网银U盾的解决方案</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-25 00:28:32 / 修改时间：00:33:29" itemprop="dateCreated datePublished" datetime="2020-08-25T00:28:32-04:00">2020-08-25</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Situation"><a href="#Situation" class="headerlink" title="Situation"></a>Situation</h2><p>主机: macOS Ver. 10.15.6<br>虚拟机: VirtualBox Ver. 6.1.12 + Windows 10</p>
+<ul>
+<li>在主机上插入招商银行23版UKey, 在Win VM中可以看到一个 USB TOKEN设备. 但是挂载时提示错误.</li>
+<li>在VBox settings -&gt; Ports -&gt; USB -&gt; USB Device Filters中尝试加载新设备时, 得到的是Vendor ID与Product ID均为0000的unknown device.</li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li>确认VBox已安装Oracle VM VirtualBox Extension Pack</li>
+<li>在主机上插入UKey</li>
+<li>访问 About This Mac -&gt; System Report -&gt; Hardware / USB, 找到名为Token的设备<ul>
+<li>记录Vendor ID与Product ID</li>
+</ul>
+</li>
+<li>在VBox settings中, 修改USB device filter, 填入<ul>
+<li>Name = Token</li>
+<li>Vendor ID </li>
+<li>Product ID</li>
+</ul>
+</li>
+<li>拔出UKey</li>
+<li>启动Win VM</li>
+<li>插入UKey</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -250,7 +330,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-24 23:58:07" itemprop="dateModified" datetime="2020-08-24T23:58:07-04:00">2020-08-24</time>
+                <time title="修改时间：2020-08-25 00:33:22" itemprop="dateModified" datetime="2020-08-25T00:33:22-04:00">2020-08-25</time>
               </span>
 
           
